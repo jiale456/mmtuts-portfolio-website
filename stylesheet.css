@@ -1,0 +1,466 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*MY CODE*/
+
+* {
+    text-decoration: none;
+}
+
+main {
+    padding-top: 100px; /**The height of the header. The reason we doing this is because since we applied the 'position:fixed;' to the header, it appears layer btw the header and the banner. The content of the banner is being pushed behind the header.**/
+}
+header {
+    background-color:#fff;
+    width: 100%;
+    height: 100px;
+    position: fixed; /**The header will follow along at the top when scrolling down.**/
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+header .header-brand {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0; /*In this case, we want to style both top & bottom's padding.Thus, we will just use the property 'padding'. (20px for top & bot/ 0px for left&right)*/
+}
+
+/*Styling navigation bar <nav>*/
+header nav ul {
+    display: block;
+    margin: 0 auto;
+    width: fit-content; /*To let the unordered list fits with its content.*/
+}
+header nav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+}
+header nav ul li a  {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+header .header-cases { /*This is not showing up in the mobile size device*/
+    display: none;
+}
+
+/**Style for desktop version:**/
+@media only screen and (min-width: 1000px){
+    header .header-brand {
+        margin: 31px 0; /**31 px is set for top and bottom margin because since the line height of the border is 38px, we used [100px(height of the header)-38= 62(left space in the border)/2 = 31px(for each top&bottom)] in order to center the header(logo).**/
+        text-align: left;
+        padding: 0 20px 0 40px;
+        border-right: 3px solid #111; /**Border:3px , solid line, color**/ 
+        float: left; /**The border will appear at the right side is because the header is width is set to100 % of the website. To solve this, we use float propert and set the border to left side.**/
+        line-height: 38px; /**In this case, we use the line-height to adjust the height of the border.**/
+
+    }
+
+    /**NAVIGATION BAR:**/
+    header nav ul {
+        margin: 20px 0 0 20px;
+        float: left;
+    }
+    header nav ul li a  {
+        line-height: 60px; /**Depends on how much you want the links clickable, always adjust the inner space of the element first.**/
+    }
+    header .header-cases { /*This is not showing up in the mobile size device*/
+        display: block; /**reappear the 'cases' in desktop size version.**/
+        font-family: 'Catamaran', sans-serif;
+        font-size: 16px;
+        color: #111;
+        float: right;  /**Move the box to the right side.**/
+        text-transform: uppercase;
+        border: 1px solid #111;
+        line-height: 38px; /**The line height is = 40px (the top&bottom side of the border occupied total of 2px**/
+        margin-right: 40px; /**Don't let the box stick at the margin-right(giving it some space).**/
+        margin-top: 30px; /**Thus, only 60px spare space for top&bottom. Dividing it by2 = 30for top and 30 for bottom.**/
+        padding: 0 20px;
+    }
+}
+
+/**INDEX PAGE**/
+.index-banner {
+    width: 100%;
+    height: calc(100vh - 100px); /**100% view height (The entire page - the header(height100px)**/
+    background-image: url("img/developer.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: table;
+}
+
+.vertical-center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.index-banner h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #111; /*x-axis  y-axis  blur-radius  color*/
+    line-height: 70px;
+}
+.index-banner h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 100;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px #111;
+    line-height: 40px;
+}
+
+/**Styling another section:**/
+.index-links div {
+    margin: 16px 16px 0; /**If the margin only has one value, meaning that four sides have the same px**/
+    width: calc(100%-32px); /**each side is 10px, so total of 2 sides are equal to 20px**/
+    height: 100px;
+    background-color: #f2f2f2;
+}
+
+.index-links div h3 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100px;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/**Make multiple @media elements for the same size of version in different part(more clarify).**/
+@media only screen and (min-width: 1000px){
+    .wrapper {
+        width: 1000px;
+        margin: 0 auto; /**centered the wrapper.**/
+    }  
+
+    .index-banner {
+        width: 100%;
+        height: 450px; 
+    }
+    .index-banner h1 { /**Adjusting the h1 text, don't let all the text displays inline**/
+       display:block;
+       width: 580px;
+       margin: 0 auto;
+    }
+    .index-links {
+         /**The browser cannot recognize how the content floating in the website unless we add another property which is 'overflow' and set it to 'hidden'.**/
+         /**We don't have to add paddint-bottom because we already added in the mobile version.**/
+        overflow: hidden;
+    }
+
+    .index-links div {
+        margin: 20px 10px 0; 
+        height: 230px;
+        background-color: #f2f2f2;
+        float: left; /**Arranging the link(square & rectangle) inline.**/
+    }
+
+    .index-boxlink-square{
+        /**The reason taking 25% is because the width of the div container is the combination of 4 square's width.**/
+        width: calc(25% - 20px) !important; /**This is going to ignore all the styling that comes after the width property here. It is because the width here is restricted by the div tag above(which is located in the same @media right here). Thus, we need to overwrite the styling of the div tag by using '!important'. The reason minus 20px is because the the div tags had left(10px)&right(10px) margin(total=20px) towards the section tag. Thus we need to minus the 20px from the size to get exactly 25% from the total width.**/
+    }
+    .index-boxlink-rectangle{
+        width: calc(50% - 20px)!important;
+    }
+
+    .index-links div h3 { /**styling the text**/
+        line-height: 230px;
+    }
+
+}
+
+/**Styling CASES PAGE**/
+.cases-links {
+    /**The reason we doing this is because right now the <section> height isn't covering all these boxes inside itself because the 'float' properties caused the browser cannot recognize these boxes is actually inside the <section> tag.**/
+    overflow: hidden;
+    margin-bottom: 20px; /**Separating the footer below it. The 20px is followed by the 'padding-top:20px; at the index page which is from the styling of 'footer' tags'.**/
+}
+
+.cases-links h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+}
+.cases-links .cases-link p {
+    padding-top: 45%;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cases-links .cases-link { /**The reason we dont use ' .cases-links div{} ' is because the wrapper of these div boxes are also a div tags. Thus, the wrapper will be affected by these properties right here.**/
+    float: left;
+    width: 230px; /** CALCULATING WIDTH FOR SQUARES: [1000px(width of the wrapper) - margins of each square(20px*4) = 920/4 = 230px(each square)].**/
+    height: 230px;
+    margin: 20px 10px 0; /**10px for top but 0px for bottom, meaning that each top&bottom has 5px margin on it whereas 5px for left&right with total margin or 10px at both sides.**/
+    background-color: #e3e3e3;
+}
+
+/**SECTION 'contact&information':**/
+.banner-btm .contactInfo {
+    height: 200px;
+    margin: 35px 0 0; 
+    background-color: #e3e3e3;
+}
+.banner-btm .contactInfo h2{
+    padding-top: 40px;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+}
+.banner-btm .contactInfo p{
+    padding-top: 40px;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+
+/**CASE (It's going to be all the styling for all the cases.)**/
+.case-vid h2 {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+}
+.case-vid iframe {
+    display: block;
+    margin: 0 auto; /**The video is not centered yet until we add the property 'display:block;'.**/
+    padding: 30px 0;
+}
+.case-vid article h3{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+.case-vid article p{
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    line-height: 24px;
+    column-count: 3; /**We want to have 3 columns in this paragraph.**/
+    column-gap: 30px;
+}
+
+/**FOOTER**/
+footer {
+    width: calc(100% - 80px);
+    padding: 40px 40px; /*It is flexible when dealing with different amount of content. If we style it with the height property, the large amount of content might affect how the content should look like.**/
+    background-color: #111;
+    margin-top: 20px; /**Used to separate the section and the footer**/
+    overflow: hidden; /**When there're too much content using float property, it causes the browser couldn't recognize what's actually inside the container. So this is how we fix the problem**/
+}
+footer ul {
+    width: fit-content;
+    float: left;
+    padding-left: 20px;
+}
+footer ul li {
+    display: block; /**Do not want the menu to be displayed inline.**/
+    list-style: none;    
+}
+footer ul li a  {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 40px;
+}
+
+.footer-cases-links { /**Do not appear in mobile size screen**/
+    display: none;
+}
+
+.footer-sm {
+    width: 50px;
+    float: right;
+}
+.footer-sm img {
+    width: 100%;
+    padding: 10px 0 0;
+}
+
+
+@media only screen and (min-width: 1000px){
+    .footer-cases-links{ /**Reappear the part**/
+        display: block;
+    }
+    .footer-cases-links p{
+        font-family: 'Catamaran', sans-serif;
+        font-size: 16px;
+        color: #fff;
+        line-height: 40px;
+        text-transform: uppercase;   
+    }
+    footer ul {
+        padding-right: 30px;
+    }
+}
+
+/**Gallery**/
+.gallery-links-h2 {
+    font-family: Catamaran;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-links { /**Making it a flex box**/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /**Adjusting the content horizontally to the center.**/
+}
+.gallery-img { /**Making it a flex box**/
+    flex-basis: 90%; /**In mobile version, the photo will always occupy 90* of the width.**/
+    margin: 10px;
+}
+.gallery-img img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+    .gallery-img { 
+        flex-basis: 400px; /**When it comes to tablet version, the images are style into another format with the width of 300px.**/ 
+    }
+}
+
+
